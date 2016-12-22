@@ -7,65 +7,68 @@ public class Fibonacci {
 
 //    public static void main(String[] args){
 //
-//        int indice;
-//        int nombre_element;
+//        int index;
+//        int input_number;
 //
-//        int fibonacci_courant = 1;
-//        int precedent1 = 2;
-//        int precedent2 = 1;
+//        int current_fibonacci = 0;
+//        int previous_n_1 = 1;
+//        int previous_n_2 = 0;
 //
 //        Scanner sc = new Scanner(System.in);
 //        System.out.println("Donne moi le nombre de nombres de Fibonacci à calculer");
-//        nombre_element = sc.nextInt();
+//        input_number = sc.nextInt();
 //
-//        System.out.println("Les"+" "+ nombre_element +" premiers elements de la suite de Fibonacci sont:");
+//        System.out.println("Les"+" "+ input_number +" premiers elements de la suite de Fibonacci sont:");
 //
-//        for (indice = 1 ; indice <= nombre_element; indice ++){
+//        for (index = 0 ; index <= input_number; index ++){
 //
-//            if (indice == 2){
-//                fibonacci_courant = 2;
+//            if (index == 1){
+//                current_fibonacci = 1;
 //            }
 //
-//            if(indice > 2) {
-//                fibonacci_courant = precedent1 + precedent2;
-//                precedent2 = precedent1;
-//                precedent1 = fibonacci_courant;
+//            if(index > 1) {
+//                current_fibonacci = previous_n_1 + previous_n_2;
+//                previous_n_2 = previous_n_1;
+//                previous_n_1 = current_fibonacci;
 //            }
 //
-//            System.out.println(fibonacci_courant+"-");
+//            System.out.println(current_fibonacci+"-");
 //        }
 //
 //
 //    }
 
+    /*************************** First Method of FIBONACCI ********************************/
+
     public static int calc_fibonacci (int input){
 
-        int indice;
+        int index;
+        int current_fibonacci = 0;
+        int previous_n_1 = 1;
+        int previous_n_2 = 0;
 
-        int fibonacci_courant = 1;
-        int precedent1 = 2;
-        int precedent2 = 1;
 
+        System.out.println("Les"+" "+ input +" premiers elements de la suite de Fibonacci sont:");
 
-        System.out.println("Les"+" "+ input+" premiers elements de la suite de Fibonacci sont:");
+        for (index = 0 ; index <= input; index ++){
 
-        for (indice = 1 ; indice <= input; indice ++){
-
-            if (indice == 2){
-                fibonacci_courant = 2;
+            if (index == 1){
+                current_fibonacci = 1;
             }
 
-            if(indice > 2) {
-                fibonacci_courant = precedent1 + precedent2;
-                precedent2 = precedent1;
-                precedent1 = fibonacci_courant;
+            if(index > 1) {
+                current_fibonacci = previous_n_1 + previous_n_2;
+                previous_n_2 = previous_n_1;
+                previous_n_1 = current_fibonacci;
             }
 
-            System.out.println(fibonacci_courant+"-");
+            System.out.println(current_fibonacci+"-");
         }
-        return fibonacci_courant;
+        return current_fibonacci;
 
 
     }
+
+    /*************************** Second Method of FIBONACCI ********************************/
 
 }
